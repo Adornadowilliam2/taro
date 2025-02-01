@@ -1,6 +1,5 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useEffect, useState } from 'react'
+
 import './App.css'
 
 function App() {
@@ -39,10 +38,19 @@ function App() {
     }
   ];
 
-  const [fat, NotFat] = useState("")
+  const [fat, AssassinMode] = useState("https://github.com/Adornadowilliam2/taro/blob/main/src/assets/fat.png?raw=true")
+
+  useEffect(()=>{
+    const interval = setInterval(() => {
+      AssassinMode((current) => (current === "https://github.com/Adornadowilliam2/taro/blob/main/src/assets/fat.png?raw=true" ? "https://github.com/Adornadowilliam2/taro/blob/main/src/assets/assassinmode.png?raw=true": "https://github.com/Adornadowilliam2/taro/blob/main/src/assets/fat.png?raw=true"))
+    }, 6000)
+
+    return () => clearInterval(interval)
+  }, []);   
+
   return (
     <>
-    <nav className='text-white bg-gray-500'><span>Sakamoto Gallery</span></nav>
+    <nav className='p-2 flex items-center bg-gray-600 text-white gap-2'><img src={fat} alt="sakamoto logo" className='w-20'/>Sakamoto Content</nav>
     <main className='p-5 flex items-center flex-wrap justify-evenly gap-5'>
     {
       data.map((item)=>(
