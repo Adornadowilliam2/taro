@@ -38,6 +38,8 @@ function App() {
       image:"https://preview.redd.it/is-yuto-suzukis-sakamoto-days-is-a-great-manga-for-beginners-v0-syvls5he0igd1.jpeg?width=640&crop=smart&auto=webp&s=35b6c6fd852b7af0ef5b2e71bdc6244cc4a7af55"
     }
   ];
+
+  const [fat, NotFat] = useState("")
   return (
     <>
     <nav className='text-white bg-gray-500'><span>Sakamoto Gallery</span></nav>
